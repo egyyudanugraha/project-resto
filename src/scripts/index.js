@@ -10,6 +10,7 @@ const cardElement = (resto) => `
     <h2 class="card-title">${resto.name}</h2>
     <p>${resto.description.substring(0, 150)}....</p>
   </div>
+  <button class="btn btn-primary">Detail</button>
 </div>`;
 
 const getData = async () => {
@@ -17,7 +18,6 @@ const getData = async () => {
     const response = await fetch('https://restaurant-api.dicoding.dev/list');
     const { restaurants } = await response.json();
 
-    console.log(restaurants);
     displayData(restaurants);
   } catch (error) {
     console.log('Erord pada : ', error);
